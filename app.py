@@ -24,7 +24,7 @@ def index():
         label = label_map[np.argmax(pred)]
         prediction = label
         emoji = emoji_map[label]
-    return render_template("templates/index.html", prediction=prediction, emoji=emoji)
+    return render_template("index.html", prediction=prediction, emoji=emoji)
 
 if __name__ == "__main__":
     app.run(debug=True)
