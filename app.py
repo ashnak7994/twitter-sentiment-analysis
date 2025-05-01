@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import os
 import tensorflow as tf
 from tensorflow.keras.models import load_model
 import numpy as np
@@ -39,4 +40,5 @@ def index():
     return render_template("index.html", prediction=prediction, emoji=emoji)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
